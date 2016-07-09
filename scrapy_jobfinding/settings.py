@@ -64,6 +64,19 @@ NEWSPIDER_MODULE = 'scrapy_jobfinding.spiders'
 #ITEM_PIPELINES = {
 #    'scrapy_jobfinding.pipelines.SomePipeline': 300,
 #}
+ITEM_PIPELINES = {
+   'scrapy_jobfinding.pipelines.DumpPipeline': 300,
+   # 'scrapy_jobfinding.pipelines.JsonFilePipeline': 600,
+   'scrapy_jobfinding.pipelines.MongoDBPipeline': 800,
+}
+MONGODB_DB_INIT = "mongodb://"
+MONGODB_DB_SVR  = "ds017205.mlab.com"
+MONGODB_DB_PORT = "17205"
+MONGODB_DB_NAME = "universal"
+MONGODB_DB_COLL = "jobs"
+MONGODB_DB_USER = "Chris"
+MONGODB_DB_PSWD = "760215"
+
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See http://doc.scrapy.org/en/latest/topics/autothrottle.html
